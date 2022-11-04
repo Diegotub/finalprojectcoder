@@ -1,7 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from ejemplo.models import Familiar
 from ejemplo.forms import Buscar, FamiliarForm
 from django.views import View
+from django.views.generic import ListView
 
 def index(request):
     return render(request, "ejemplo/saludar.html", {"nombre":"Diego",
