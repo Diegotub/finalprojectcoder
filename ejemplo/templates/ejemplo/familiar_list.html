@@ -7,14 +7,18 @@
     <title>Document</title>
 </head>
 <body>
-<ul>
+    <ul>
 
-{% block buscar %} {% endblock %}
+        {% block buscar %} {% endblock %}
 
-{% for familiar in object_list %}
-    <li>{{familiar}}</li>
-{% endfor %}    
-</ul>
+        {% for familiar in object_list %}
+        <li>
+            {{familiar}}
+            <a href="{% url'familiar-borrar' familiar.id %}">Borrar</a>
+            <a href="{% url'familiar-actualizar' familiar.id %}">Update</a>
+        </li>
+        {% endfor %}    
+    </ul>
 
 </body>
 </html>
