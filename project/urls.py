@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path 
 from ejemplo.views import (index, index_dos, index_tres,
-                           monstrar_familiares, BuscarFamiliar, AltaFamiliar)
+                           monstrar_familiares, BuscarFamiliar,  FamiliarList, AltaFamiliar)
 from blog.views import index as blog_index
 
 urlpatterns = [
@@ -27,6 +27,8 @@ urlpatterns = [
     path('mi-familia/', monstrar_familiares),
     path('blog/', blog_index),
     path('mi-familia/buscar', BuscarFamiliar.as_view()),
+    path('panel-familia/', FamiliarList.as_view()),
     path('mi-familia/alta', AltaFamiliar.as_view())
-  ]
+
+    ]
 
